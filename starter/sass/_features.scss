@@ -1,5 +1,11 @@
 .features {
-  background-color: $color-grey-light-2;
-  grid-column: center-start / center-end;
-  // names stablished in base file
+  grid-column: center-start / center-end; // names stablished in base file
+  
+  margin: 15rem 0;
+
+  // a grid inside of a grid element/column
+  display: grid; // or flex is another option
+  grid-template-columns: repeat(3, 1fr); // here we are creating cloumns, 3 with 1 fractional unit each
+  // grid-template-rows: auto auto; // not needed, it will happen on its own / implicitly 
+  grid-gap: 6rem;
 }
