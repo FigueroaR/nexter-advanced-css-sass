@@ -37,5 +37,9 @@ body {
 .container {
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content); // 6px values 
+  //1 8rem column & 1 fr for start and end to align to center all 8 columns // 8 cloumns   //minmax: max should be 14rem but never less than the min content // helps with  vw adaptiveness                // minmax( min or no less than, but always or max)
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat( 8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; 
+  // we also give the lines of each columns names for better possitioning
+
 
 }
