@@ -1,0 +1,27 @@
+//we are creating an enternal selector to be extended in the html selectors (we give it a familiar name or w.e)
+%heading {
+  font-family: $font-display; // check base file
+  font-weight: 400; // imported from google fonts
+}
+
+.heading-1 {
+  @extend %heading;
+}
+
+.heading-2 {
+  @extend %heading;
+}
+
+.heading-3 {
+  @extend %heading;
+}
+
+.heading-4 {
+  @extend %heading;
+  font-size: 1.9rem;
+
+  //modifiers
+  &--light {color: $color-grey-light-1;}
+
+  &--dark {color: $color-grey-dark-1;}
+}
