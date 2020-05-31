@@ -1,7 +1,30 @@
 .story {
   &__pictures {
     background-color: $color-primary;
+    background-image:  linear-gradient(rgba($color-primary, .5), rgba($color-primary, .5)), url(../img/back.jpg);
+    background-size: cover;
     grid-column: full-start / col-end 4;
+
+    display: grid;
+    //our grid will be 6x6
+    grid-template-rows: repeat(6, 1fr); //we are creating 6 rows with = spacing
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center; // this will align the item on y axis on its own cell (space)
+  }
+
+  &__img--1 {
+    width: 100%;
+    grid-row: 2 / 6; // we specify the location of this image
+    grid-column: 2 /  6;
+    box-shadow: 0 2rem 5rem rgba(#000, .1);
+  }
+
+  &__img--2 {
+    width: 115%;
+    grid-row: 4 / 6 ;
+    grid-column: 4 / 7;
+    z-index: 1;
+    box-shadow: 0 2rem 5rem rgba(#000, .2);
   }
 
   &__content {
