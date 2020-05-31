@@ -7,5 +7,23 @@
   &__content {
     background-color: $color-grey-light-1;
     grid-column: col-start 5 / full-end;
+
+    padding: 6rem 8vw;  // its bettwer to use view port width, it allows us to be more fuild with screen sizes
+
+
+    // display: flex;
+    // flex-direction: column;                              // <---- flex method 
+    // justify-content: center;
+    // align-items: flex-start;
+
+    display: grid;
+    align-content: center; //this aligns things on the y axis (cross axis)    //   <----- grid method
+    justify-items: start; // here we set items to start from left to right 
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 4rem;
   }
 }
