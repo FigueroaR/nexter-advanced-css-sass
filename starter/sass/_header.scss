@@ -1,4 +1,38 @@
 .header {
-  background-color: $color-grey-dark-1;
-  grid-column: full-start / col-end 6; // it end after the 6th column
+  background-color: $color-grey-dark-1; // <-- background color
+  grid-column: full-start / col-end 6; // it ends after the 6th column
+
+  // although we have set u a background color, this image will overide that and provide us a background image
+  background-image: linear-gradient(rgba($color-secondary, .93), rgba($color-secondary, .93)), url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  padding: 8rem; // on all sides
+  padding-top: 4rem; // on top only
+
+  display: grid;
+  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-columns: max-content; // to only have the width on the content // the grid will becomes as large as it ened to to display its content , one large column
+  grid-row-gap: 1.5rem;
+  justify-content: center; // x axis
+
+  &__logo {
+    height: 3rem;
+    justify-self: center; // x axis
+  }
+
+  &__btn {
+    align-self: start; //vert y axis cross axis
+    justify-self: start; //x axis
+    }
+
+  &__seeon-text {
+
+  }
+
+  &__seenon-logo {
+
+    img {
+      height: 2.5rem; // no width here needed
+    }
+  }
 }
