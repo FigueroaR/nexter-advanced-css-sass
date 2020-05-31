@@ -15,6 +15,7 @@
   grid-row-gap: 1.5rem;
   justify-content: center; // x axis
 
+
   &__logo {
     height: 3rem;
     justify-self: center; // x axis
@@ -25,14 +26,34 @@
     justify-self: start; //x axis
     }
 
-  &__seeon-text {
+  &__seenon-text {
+    // even text can be a grid item and also pseudo elemtns
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-column-gap: 1.5rem;
+    align-items: center;
+    //padding-top: 18rem;
 
+    font-size: 1.6rem;
+    color: $color-grey-light-2;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      display: block;
+      background-color: currentColor; // here we inherit the color of the parent text
+    }
   }
 
   &__seenon-logo {
-
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // we are creating agrid and placing each logo as we want
+    grid-gap: 3rem; // we create space to separate thema  bit 
+    justify-items: center; // x axis
     img {
       height: 2.5rem; // no width here needed
+      filter: brightness(70%); // 100% default to self, less #% means darker
     }
   }
 }
