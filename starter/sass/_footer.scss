@@ -1,4 +1,45 @@
 .footer {
   background-color: $color-secondary;
   grid-column: full-start / full-end;
+  padding: 8rem;
+  
+}
+
+.nav {
+  list-style: none;
+  display: grid;                         // as soon as one of the columns are less than 20rem, one will desiapear
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); // auoto fit will automaitcally know how many tracks (columns) depending on how wmany children .nav has 
+  grid-gap: 2rem; // space between items inside the grid only
+  align-items: center ; // y axis // cloumn // vertically
+
+  &__link:link,
+  &__link:visited {
+    font-size: 1.4rem;
+    color: #fff;
+    text-decoration: none;  
+    font-family: $font-display;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1.5rem; // we need a display block to work along with this padding
+    display: block;
+    transition: all .2s;
+  }
+    
+
+  &__link:hover,
+  &__link:active {
+    background-color: rgba(#fff, .05);
+    transform: translateY(-3px);  // negative number pull it up
+  
+  }
+}
+
+.copyright {
+  font-size: 1.4rem;
+  color: $color-grey-light-2;
+  margin-top: 6rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%;
+  text-align: center;
 }
