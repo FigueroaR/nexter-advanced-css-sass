@@ -3,18 +3,33 @@
   
   margin: 15rem 0;
 
-  // a grid inside of a grid element/column
-  display: grid; // or flex is another option
-  //"auto-full" create as many tracks as needed and stay between 250 px and 1 fractional unit // 3rx2col  then 2rowx3col then 1rowx6col
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  //grid-template-columns: repeat(3, 1fr); // here we are creating cloumns, 3 with 1 fractional unit each
-  // grid-template-rows: auto auto; // not needed, it will happen on its own / implicitly 
-  grid-gap: 6rem;
-  align-items: start; // helps align the text in the individual feature boxes // overide the stretch
+  
+  @supports(display: grid) {
+      // a grid inside of a grid element/column
+    display: grid; // or flex is another option
+    //"auto-full" create as many tracks as needed and stay between 250 px and 1 fractional unit // 3rx2col  then 2rowx3col then 1rowx6col
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    //grid-template-columns: repeat(3, 1fr); // here we are creating cloumns, 3 with 1 fractional unit each
+    // grid-template-rows: auto auto; // not needed, it will happen on its own / implicitly 
+    grid-gap: 6rem;
+    align-items: start; // helps align the text in the individual feature boxes // overide the stretch
+
+  }
 
 }
 
 .feature {
+
+  //////////// prograsive enhancement theory
+  float: left;
+  width: 33.3333%;
+  margin-bottom: 6rem;
+  /////////////////////////////////////////
+
+  @supports(display: grid) {
+      width: auto;
+      margin-bottom: 0;
+  }
 
   display: grid;
   // min content will adjust to any size variation wechange on the icons, the next will occupy the rest 
