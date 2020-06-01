@@ -6,11 +6,12 @@
   // a grid inside of a grid element/column
   display: grid; // or flex is another option
   //"auto-full" create as many tracks as needed and stay between 250 px and 1 fractional unit // 3rx2col  then 2rowx3col then 1rowx6col
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   //grid-template-columns: repeat(3, 1fr); // here we are creating cloumns, 3 with 1 fractional unit each
   // grid-template-rows: auto auto; // not needed, it will happen on its own / implicitly 
   grid-gap: 6rem;
   align-items: start; // helps align the text in the individual feature boxes // overide the stretch
+
 }
 
 .feature {
@@ -20,6 +21,7 @@
   grid-template-columns: min-content 1fr;
   grid-row-gap: 1.5rem; // creating space between roms and cloums
   grid-column-gap: 2.5rem;
+  
   
 
   &__icon {

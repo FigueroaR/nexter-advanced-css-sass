@@ -16,6 +16,13 @@
   justify-content: center; // x axis
 
 
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1; // fullstart / full end
+  }
+
+  
+
+
   &__logo {
     height: 3rem;
     justify-self: center; // x axis

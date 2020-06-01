@@ -10,12 +10,25 @@
   grid-row-gap: 2rem;
   justify-items: center; // x axis, things inside the cell
 
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1; // fullstart / full end
+
+  }
+
   &__list {
     display: grid;
     grid-template-columns: min-content max-content ; //     we already gave photo size and we dont want text to break
     grid-column-gap: 2rem; // only on the vertical 
     grid-row-gap: 5vh; // 5% of view port height // fuild movement 
     align-items: center; // y axis, itself 
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: repeat(3, min-content max-content) ; // we are reapeting this 3 times to fit all 3 realtors
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: min-content max-content ; // back to vertical realtors like initial desktop
+    }
   }
 
   &__img {
