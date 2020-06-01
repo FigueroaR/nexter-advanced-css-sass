@@ -14,17 +14,29 @@ $color-grey-dark-2: #6D5D4B;
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
 
+//////////////////// 
+//Responsive Breakpoints
+$bp-largest: 75em; // 1200px/16(default broswser size) = 75em 
+$bp-large: 62.5em; // 1000px/ 16px
+$bp-medium: 60em; // ??px/ 16px
+
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  
 }
 
 html {
   box-sizing: border-box;
-  font-size: 62.5% // 1rem = 10px;    10px(what we want for easy calculation)/ 16px(browser default font size) = .625 or 62.5% 
+  // 10px(what we want for easy calculation) / 16px(browser default font size) = .625 or 62.5% 
+  font-size: 62.5%; // 1rem = 10px;   
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%
+  }
 }
 
 body {
@@ -39,7 +51,11 @@ body {
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content); // 6px values 
   //1 8rem column & 1 fr for start and end to align to center all 8 columns // 8 cloumns   //minmax: max should be 14rem but never less than the min content // helps with  vw adaptiveness                // minmax( min or no less than, but always or max)
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat( 8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; 
-  // we also give the lines of each columns names for better possitioning
+  // we also give the lines of each columns names for better possitioning // even during queries
 
+  @media only screen and (max-width: $bp-large) {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content); // 6px values 
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat( 8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; 
+  }
 
 }

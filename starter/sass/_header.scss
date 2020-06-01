@@ -10,8 +10,8 @@
   padding-top: 4rem; // on top only
 
   display: grid;
-  grid-template-rows: 1fr min-content 6rem 1fr;
-  grid-template-columns: max-content; // to only have the width on the content // the grid will becomes as large as it ened to to display its content , one large column
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr; // minmax(min is 6 rem, fit the content in the row ) 
+  grid-template-columns: mminmax(min-content, max-content ); // to only have the width on the content // the grid will becomes as large as it needs to to display its content , one large column, vice versa
   grid-row-gap: 1.5rem;
   justify-content: center; // x axis
 
@@ -51,8 +51,10 @@
     grid-template-columns: repeat(4, 1fr); // we are creating agrid and placing each logo as we want
     grid-gap: 3rem; // we create space to separate thema  bit 
     justify-items: center; // x axis
+    align-items: center; // y axis, individual items in each cell
     img {
-      height: 2.5rem; // no width here needed
+      max-height: 2.5rem; 
+      max-width: 100%;
       filter: brightness(70%); // 100% default to self, less #% means darker
     }
   }
